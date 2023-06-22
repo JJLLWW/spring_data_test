@@ -1,0 +1,11 @@
+DROP TABLE state IF EXISTS;
+CREATE TABLE state (text VARCHAR(255));
+INSERT INTO state (text) VALUES ('ABCDEF');
+
+DROP TABLE boards IF EXISTS;
+CREATE TABLE boards (
+    id INTEGER UNIQUE NOT NULL,
+    fen VARCHAR(255) DEFAULT 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1' NOT NULL,
+    PRIMARY KEY (id)
+);
+INSERT INTO boards (id) VALUES (1), (2), (3);
