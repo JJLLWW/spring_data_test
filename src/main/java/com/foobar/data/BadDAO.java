@@ -8,10 +8,6 @@ import org.springframework.stereotype.Component;
 public class BadDAO {
     @Autowired
     JdbcTemplate dbTemplate;
-    public String doQuery() {
-        String val = dbTemplate.queryForObject("SELECT text FROM state", String.class);
-        return val;
-    }
     public String getBoard(int id) {
         String query = String.format("SELECT fen FROM boards WHERE id = %d;", id);
         return dbTemplate.queryForObject(query, String.class);

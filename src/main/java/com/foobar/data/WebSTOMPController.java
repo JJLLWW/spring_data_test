@@ -7,13 +7,11 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class WebSTOMPController {
-    // recipe for disaster, but proof this can work.
     @Autowired
     BadDAO dao;
     @MessageMapping("/")
     @SendTo("/topic")
     public String doThing() {
-        String val = dao.doQuery();
-        return val;
+        return "HELLO WORLD";
     }
 }

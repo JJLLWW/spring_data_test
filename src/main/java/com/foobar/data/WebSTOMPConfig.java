@@ -11,9 +11,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 public class WebSTOMPConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        // endpoints targeting @MessageMapping methods
         registry.setApplicationDestinationPrefixes("/app");
-        // simple broker broadcasts to clients
         registry.enableSimpleBroker("/topic");
     }
 

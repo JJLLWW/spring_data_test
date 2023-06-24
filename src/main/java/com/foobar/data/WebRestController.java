@@ -1,10 +1,9 @@
 package com.foobar.data;
 
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
+
+// how to add some kind of restriction on who can access these endpoints?
 
 @RestController
 public class WebRestController {
@@ -16,7 +15,6 @@ public class WebRestController {
         return fen;
     }
 
-    // maybe having the data in the request body is a bit nasty, don't know the conventions.
     @PutMapping("/board/{id}")
     public void setBoard(@PathVariable int id, @RequestBody String val) {
         dao.setBoard(id, val);
